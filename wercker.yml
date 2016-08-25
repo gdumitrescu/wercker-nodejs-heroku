@@ -16,6 +16,14 @@ box: node:4.5.0-slim
 
     # - mongodb
     # http://devcenter.wercker.com/docs/services/mongodb.html
+
+dev:
+  steps:
+    - npm-install
+    - internal/watch:
+        code: node app.js
+        reload: true
+
 build:
   # The steps that will be executed on build
   # Steps make up the actions in your pipeline
